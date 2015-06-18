@@ -76,20 +76,20 @@ public class SpotGenerator {
     }
     
     if (tokens.length==3){
-      newSFs.add(tokens[0]);                      // Michael
-      newSFs.add(tokens[1]);                      // Jeffery
-      newSFs.add(tokens[2]);                      // Jordan
+      newSFs.add(tokens[0]);                                        // Michael
+      newSFs.add(tokens[1]);                                        // Jeffery
+      newSFs.add(tokens[2]);                                        // Jordan
       newSFs.addAll(biTokenSpots(tokens[0], tokens[2]));        
-      newSFs.add(tokens[0]+" "+tokens[1]+" "+initials[2]+".");    // Michael Jeffery J.
-      newSFs.add(tokens[0]+" "+tokens[1]+" "+initials[2]);      // Michael Jeffery J
-      newSFs.add(tokens[0]+" "+initials[1]+". "+tokens[2]);      // Michael J. Jordan
-      newSFs.add(tokens[0]+" "+initials[1]+" "+tokens[2]);      // Michael J Jordan
-      newSFs.add(initials[0]+". "+tokens[1]+" "+tokens[2]);      // M. Jeffery Jordan
-      newSFs.add(initials[0]+" "+tokens[1]+" "+tokens[2]);      // M Jeffery Jordan
-      newSFs.add(initials[0]+"."+initials[1]+". "+tokens[2]);      // M.J. Jordan
-      newSFs.add(initials[0]+""+initials[1]+" "+tokens[2]);      // MJ Jordan
+      newSFs.add(tokens[0]+" "+tokens[1]+" "+initials[2]+".");      // Michael Jeffery J.
+      newSFs.add(tokens[0]+" "+tokens[1]+" "+initials[2]);          // Michael Jeffery J
+      newSFs.add(tokens[0]+" "+initials[1]+". "+tokens[2]);         // Michael J. Jordan
+      newSFs.add(tokens[0]+" "+initials[1]+" "+tokens[2]);          // Michael J Jordan
+      newSFs.add(initials[0]+". "+tokens[1]+" "+tokens[2]);         // M. Jeffery Jordan
+      newSFs.add(initials[0]+" "+tokens[1]+" "+tokens[2]);          // M Jeffery Jordan
+      newSFs.add(initials[0]+"."+initials[1]+". "+tokens[2]);       // M.J. Jordan
+      newSFs.add(initials[0]+""+initials[1]+" "+tokens[2]);         // MJ Jordan
       newSFs.add(initials[0]+"."+initials[1]+"."+initials[2]+".");  // M.J.J.
-      newSFs.add(initials[0]+""+initials[1]+""+initials[2]);      // MJJ
+      newSFs.add(initials[0]+""+initials[1]+""+initials[2]);        // MJJ
     }
     
     if (tokens.length>3){
@@ -98,8 +98,8 @@ public class SpotGenerator {
         newSF += c+".";
       }
       newSF = newSF.trim();
-      newSFs.add(newSF);                          // S.W.A.T.
-      newSFs.add(newSF.replaceAll(".", ""));                // UNESCO
+      newSFs.add(newSF);                                            // S.W.A.T.
+      newSFs.add(newSF.replaceAll(".", ""));                        // UNESCO
       newSFs.addAll(biTokenSpots(tokens[0], tokens[tokens.length-1]));
     }
     
@@ -117,15 +117,15 @@ public class SpotGenerator {
     char firstNameIni = Character.toUpperCase(firstName.charAt(0));
     char lastNameIni = Character.toUpperCase(lastName.charAt(0));
     Set<String> newSFs = new HashSet<String>();
-    newSFs.add(firstName);                // Michael
-    newSFs.add(lastName);                // Jackson
-    newSFs.add(firstName+" "+lastNameIni+".");      // Michael J.
-    newSFs.add(firstName+" "+lastNameIni);        // Michael J
-    newSFs.add(firstNameIni+". "+lastName);        // M. Jackson
-    newSFs.add(firstNameIni+" "+lastName);        // M Jackson
-    newSFs.add(firstNameIni+"."+lastNameIni+".");    // M.J.
+    newSFs.add(firstName);                            // Michael
+    newSFs.add(lastName);                             // Jackson
+    newSFs.add(firstName+" "+lastNameIni+".");        // Michael J.
+    newSFs.add(firstName+" "+lastNameIni);            // Michael J
+    newSFs.add(firstNameIni+". "+lastName);           // M. Jackson
+    newSFs.add(firstNameIni+" "+lastName);            // M Jackson
+    newSFs.add(firstNameIni+"."+lastNameIni+".");     // M.J.
     newSFs.add(firstNameIni+". "+lastNameIni+".");    // M. J.
-    newSFs.add(firstNameIni+""+lastNameIni);      // MJ
+    newSFs.add(firstNameIni+""+lastNameIni);          // MJ
     
     return newSFs;
   }
